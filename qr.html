@@ -1,0 +1,42 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+ 
+  <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+
+<div class="form">
+  <h1>QR Generator</h1>
+  <form>
+    <input type="url" id="website" name="website" placeholder="https://www.google.com/" required />
+    <button type="button" onclick="generate()">
+      Generate QR Code
+    </button>
+    <button onclick="moo()"> 
+      Clear
+    </button>
+
+  </form>
+    <div id="qrcode" class="qrcode"></div>
+
+</div>
+
+<script>
+  function generate(){
+    let website = document.getElementById("website").value;
+    let qrbox = document.getElementById("qrcode");
+    qrbox.innerHTML = "";
+    new QRCode(qrbox, website);
+  }
+  function moo(){
+    let website = document.getElementById("website").value;
+    let qrbox = document.getElementById("qrcode");
+    qrbox.innerHTML = "";
+    website.value = "";
+  }
+</script>
+</body>
+</html>
